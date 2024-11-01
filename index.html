@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Lucky Draw</title>
+</head>
+<style>
+  @keyframes rotate {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+  }
+
+  .sunburst {
+    animation: rotate 5s linear infinite;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    max-height: 90%;
+  }
+
+  .border_slot {
+    background: #ffbf1f url('assets/light-blubs.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-shadow: .625rem .625rem 0 rgba(0, 0, 0, .2);
+  }
+
+</style>
+<body class="bg-red-500  overflow-hidden">
+  <div class="flex items-center justify-center h-screen relative">
+    <img class="sunburst" src="assets/sunburst.svg" alt="sunburst">
+    <div class="w-full max-w-2xl p-10">
+      <h1 class="text-3xl font-bold text-center mb-4">Lucky Draw</h1>
+      <div class="flex w-full h-36 border_slot rounded-lg p-5 text-center">
+        <div class="w-full bg-gray-200 rounded-lg p-2"></div>
+      </div>
+      <div class="flex w-full justify-center py-4">
+        <button class="w-1/3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Draw</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
